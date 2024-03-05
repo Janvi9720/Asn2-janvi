@@ -1,0 +1,70 @@
+<h1>{{title}}</h1>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+   th, td {
+    border: 1px solid gray;  
+    padding: 6px;
+    text-align: left;
+   
+  }
+
+  th {
+    color: lightskyblue;
+    background-color: lightcyan;
+  } 
+
+.a {
+    background-color: yellow; 
+  }
+
+ 
+</style>
+<table>
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Reviews</th>
+      <th>Category</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each product}}
+    {{#if (zero this.reviews)}}
+    <tr>
+        {{else}}
+        <tr class="a">
+            {{/if}}
+      
+      <td>{{this.title}}</td>
+      <td>{{this.price}}</td>
+      <td>{{ this.reviews}}</td>
+      <td>{{this.categoryName}}</td>
+      <td><img src="{{this.imgUrl}}" alt="{{title}}" style="max-width: 100px; max-height: 100px;"></td>
+    </tr>
+        
+    </tr>
+      
+   
+  {{/each}}
+</tbody>
+
+    {{!-- {{#each product}} --}}
+    {{!-- {{#if reviews}}  <!-- step 8 -->
+      <tr>
+        <td>{{title}}</td>
+        <td>{{price}}</td>
+        <td>{{reviews}}</td> 
+        <td>{{categoryName}}</td>
+        <td><img src="{{imgUrl}}" alt="{{title}}" style="max-width: 100px; max-height: 100px;"></td>
+      </tr>
+      {{/if}}  <!-- step 8 -->
+    {{/each}}  --}}
+</table>
+
+
